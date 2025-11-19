@@ -1,1 +1,1 @@
-# taylor-swift-database
+# Taylor Swift's Discography Database
