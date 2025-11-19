@@ -11,6 +11,7 @@ Album(
 
 Musica(
   _ id _,
+  track_number,
   titulo,
   url,
   data_lancamento,
@@ -58,6 +59,7 @@ table Album
 table Musica
 (
   _ id _,
+  track_number,
   titulo,
   url,
   data_lancamento,
