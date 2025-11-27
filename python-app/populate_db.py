@@ -55,7 +55,10 @@ def process_albums(df, cursor):
 
     albums = df[['album_title', 'album_url', 'category']].drop_duplicates()
 
-    album_map = {}  # (titulo, url) -> id
+    # Removes lines w/ empty title
+    albums = albums.dropna(subset=['album_title'])
+
+    album_map = {}
 
     for _, row in albums.iterrows():
         cursor.execute("""
