@@ -139,18 +139,18 @@ def process_tags(df, cursor):
 
 def parse_date(date_str):
     """
-    Converts data string to SQLite format (YYYY-MM-DD).
+    Converts date string to SQLite format (YYYY-MM-DD).
     E.g. "6/19/2006" -> "2006-06-19"
     """
     if pd.isna(date_str) or date_str == '':
         return None
     try:
-        # Tentar formato M/D/YYYY
+        # assuming M/D/YYYY
         date_obj = datetime.strptime(date_str, '%m/%d/%Y')
         return date_obj.strftime('%Y-%m-%d')
     except:
         try:
-            # Tentar formato alternativo
+            # assuming already correct yyyy/mm/dd
             date_obj = datetime.strptime(date_str, '%Y-%m-%d')
             return date_obj.strftime('%Y-%m-%d')
         except:
