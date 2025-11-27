@@ -22,18 +22,15 @@ DATASET_FILE = '../dataset-files/dataset-ts_discography.tsv'
 
 def create_database():
     """Creates database and executes the SQL schema."""
-    print(f"📁 A criar base de dados: {DB_FILE}")
 
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
 
-    print(f"📋 A executar schema: {SCHEMA_FILE}")
     with open(SCHEMA_FILE, 'r', encoding='utf-8') as f:
         schema_sql = f.read()
         cursor.executescript(schema_sql)
 
     conn.commit()
-    print("✅ Base de dados criada com sucesso!\n")
     return conn, cursor
 
 
@@ -174,7 +171,6 @@ def process_songs(df, cursor, album_map, pessoa_map, tag_map):
         album_id = album_map.get(album_key)
 
         if not album_id:
-            print(f"   ⚠️  Álbum não encontrado: {album_key}")
             continue
 
         # Process lyrics
