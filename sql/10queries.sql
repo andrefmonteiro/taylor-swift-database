@@ -1,15 +1,16 @@
 --Pergunta 1 Quantas músicas tem cada álbum da Taylor Swift 
-SELECT a.titulo AS titulo_album, count( * ) AS numero_de_musicas
-  FROM Album AS a JOIN Musica AS m ON m.album_id = a.id
- GROUP BY m.album_id;
+
+select a.titulo as titulo_album, count( * ) as numero_de_musicas
+from Album as a join Musica as m on m.album_id = a.id
+group by m.album_id;
  
 --Pergunta 2 Quais as músicas que foram escritas apenas pela Taylor Swift 
 
-SELECT m.titulo
-FROM Musica m JOIN Escreve e ON e.musica_id = m.id
-JOIN Pessoa p ON p.id = e.pessoa_id
-GROUP BY m.id
-HAVING COUNT(*) = 1 AND MAX(p.nome) = 'Taylor Swift';
+select m.titulo
+from Musica m join Escreve e on e.musica_id = m.id
+join Pessoa p on p.id = e.pessoa_id
+group by m.id
+having count(*) = 1 and MAX(p.nome) = 'Taylor Swift';
 
 --Pergunta 3 Quais os produtores e as tags de cada música 
 
