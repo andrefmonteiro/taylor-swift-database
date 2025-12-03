@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Songs written only by taylor</h1>
+<table>
+  <tr>
+    <th>
+      <b>Song title</b>
+    </th>
+  </tr>
+
+  {% for song in songs %}
+  <tr>
+    <td>
+      {{ song.title }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

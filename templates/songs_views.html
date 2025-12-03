@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>all the songs that have more than {{views}} views</h1>
+<table>
+  <tr>
+    <th>
+      <b>Song title</b>
+    </th>
+    <th>
+      <b>Views</b>
+    </th>
+  </tr>
+
+  {% for song in songs %}
+  <tr>
+    <td>
+      {{ song.title }}
+    </td>
+    <td>
+      {{ song.views }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Most recent and Oldest songs</h1>
+<table>
+  <tr>
+    <th>
+      <b>Song title</b>
+    </th>
+    <th>
+      <b>Date</b>
+    </th>
+  </tr>
+
+  {% for song in songs %}
+  <tr>
+    <td>
+      {{ song.title }}
+    </td>
+    <td>
+      {{ song.date }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

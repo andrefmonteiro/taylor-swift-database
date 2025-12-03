@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Number of songs launched per year</h1>
+<table>
+  <tr>
+    <th>
+      <b>Year</b>
+    </th>
+    <th>
+      <b>Number of songs launched</b>
+    </th>
+  </tr>
+
+  {% for song in songs %}
+  <tr>
+    <td>
+      <a href="/year/{{ song.year }}">{{song.year }}</a>
+    </td>
+    <td>
+      {{ song.count }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Year: {{year}}</h1>
+<table>
+  <tr>
+    <th>
+      <b>song id</b>
+    </th>
+    <th>
+      <b>title</b>
+    </th>
+    <th>
+      <b>url</b>
+    </th>
+    <th>
+      <b>date</b>
+    </th>
+    <th>
+      <b>views</b>
+    </th>
+    <th>
+      <b>album id</b>
+    </th>
+  </tr>
+
+  {% for song in songs %}
+  <tr>
+    <td>
+      {{ song.id }}
+    </td>
+    <td>
+      {{ song.title }}
+    </td>
+    <td>
+      <a href="{{ song.url }}">{{ song.url }}</a>
+    </td>
+    <td>
+      {{ song.date }}
+    </td>
+    <td>
+      {{ song.views }}
+    </td>
+    <td>
+      <a href="/album/{{ song.album_id }}">{{song.album_id }}</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

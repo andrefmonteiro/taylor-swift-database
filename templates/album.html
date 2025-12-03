@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ album.Title }}</h1>
+<p>
+  <b>Album id: </b>{{ album.id }}
+</p>
+<p>
+  <b>Title: </b>{{ album.titulo }}
+</p>
+<p>
+  <b>URL: </b><a href="{{ album.url }}">{{ album.url }}</a>
+</p>
+<p>
+  <b>Category: </b>{{ album.categoria }}
+</p>
+{% endblock %}

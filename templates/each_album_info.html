@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Each album info</h1>
+<table>
+  <tr>
+    <th>
+      <b>Album id</b>
+    </th>
+    <th>
+      <b>Album title</b>
+    </th>
+    <th>
+      <b>Most viewed song</b>
+    </th>
+    <th>
+      <b>Tags</b>
+    </th>
+  </tr>
+
+  {% for song in songs %}
+  <tr>
+    <td>
+      <a href="/album/{{ song.album_id }}">{{song.album_id }}</a>
+    </td>
+    <td>
+      {{ song.album }}
+    </td>
+    <td>
+      {{ song.most_viewed }}
+    </td>
+    <td>
+      {{ song.tags }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

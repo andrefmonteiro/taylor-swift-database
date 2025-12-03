@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>all the words that contain the word: {{word}}</h1>
+<table>
+  <tr>
+    <th>
+      <b>Song title</b>
+    </th>
+    <th>
+      <b>number of occurences</b>
+    </th>
+  </tr>
+
+  {% for song in songs %}
+  <tr>
+    <td>
+      {{ song.title }}
+    </td>
+    <td>
+      {{ song.occurrences }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

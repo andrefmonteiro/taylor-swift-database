@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Songs per Album</h1>
+<table>
+  <tr>
+    <th>
+      <b>Album id</b>
+    </th>
+    <th>
+      <b>Album Title</b>
+    </th>
+    <th>
+      <b>Number of Songs</b>
+      </th>
+  </tr>
+
+  {% for album in albums %}
+  <tr>
+    <td>
+      <a href="/album/{{ album.id }}">{{album.id }}</a>
+    </td>
+    <td>
+      {{ album.title }}
+    </td>
+    <td>
+      {{ album.songs_count }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- 
+  Conteúdo apenas simples para começar. 
+ 
+  Veja aplicação fazendo interface à MovieStream para exemplos concretos.
+-->
+<!-- introduction to the website -->
+<h1>Taylor Swift website</h1>
+
+<!-- 1. Songs per album -->
+<p>
+  <a href="./songs_album">Songs per album</a>
+</p>
+
+<!-- 2. Songs written just by taylor swift -->
+<p>
+  <a href="./only_taylor_writer_songs">Songs written just by Taylor Swift</a>
+</p>
+
+<!-- 3. Producers and respective tag for each one -->
+<p>
+  <a href="./song_producer">Producers for each song</a>
+</p>
+
+<!-- 4. what are the songs with the word love and how many times the word love appears -->
+<p>Number of occurences of a given word per song:
+<form name="mid" action="javascript:window.open('/songs/'+document.forms['mid'].elements['word_song'].value,'_self')">
+   word:<input value="like" name="word_song" type="text" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+
+<!-- 5. what are the songs with the top 10 most views -->
+<p>
+  <a href="./top_ten_views">Top ten songs with most views</a>
+</p>
+
+<!-- 6. number of songs per year -->
+ <p>
+  <a href="./songs_per_year">Number of songs launched per year</a>
+</p>
+
+<!-- 7. songs most recently published and oldest -->
+ <p>
+  <a href="./oldest_recent_songs">Most recent and Oldest songs</a>
+</p>
+
+<!-- 8. information about each album and the music with the most views -->
+ <p>
+  <a href="./each_album_info">Information about each album</a>
+</p>
+
+<!-- 9. what are the songs with more than a given number of views -->
+<p>Songs with more than a certain number of views:
+<form name="yo" action="javascript:window.open('/songs_views/'+document.forms['yo'].elements['views'].value,'_self')">
+   Views:<input value=100000 name="views" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+
+<!-- 10. who are the artists that produce music with taylor -->
+ <p>
+  <a href="./artist_more_one">Artists that produced music with Taylor with how many they did</a>
+</p>
+
+
+
+
+{% endblock %}
