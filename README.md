@@ -1,6 +1,6 @@
 # Taylor Swift Discography Database
 
-**Bases de Dados (CC2005) - FCUP 2024/2025**
+**Projeto feito no âmbito de Bases de Dados (CC2005)**
 
 Base de dados relacional sobre a discografia de Taylor Swift: álbuns, músicas, artistas, escritores, produtores e tags.
 
@@ -58,13 +58,6 @@ python3 server.py
 - `/songs_views/<n>/` - Músicas com mais de N visualizações
 - `/artist_more_one/` - Colaboradores da Taylor Swift
 - _[+ 3 queries adicionais na app]_
-
----
-
-## Dataset
-
-**Fonte:** Kaggle - Taylor Swift Discography  
-**Conteúdo:** 60+ álbuns, 400+ músicas, 200+ pessoas, 50+ tags
 
 ---
 
