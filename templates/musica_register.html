@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ musica.id }}</h1>
+<p>
+  <b>musica id: </b>{{ musica.id }}
+</p>
+<p>
+  <b>musica track number: </b>{{ musica.track_number }}
+</p>
+<p>
+  <b>musica title: </b>{{ musica.titulo }}
+</p>
+<p>
+  <b>musica url: </b>{{ musica.url }}
+</p>
+<p>
+  <b>musica launch data: </b>{{ musica.data_lancamento }}
+</p>
+<p>
+  <b>musica visualizacoes: </b>{{ musica.visualizacoes }}
+</p>
+<p>
+  <b>musica lyrics: </b>{{ musica.lyrics }}
+</p>
+<p>
+  <b>album id:<a href="/album/{{ musica.album_id }}">{{musica.album_id }}</a></b>
+</p>
+{% endblock %}

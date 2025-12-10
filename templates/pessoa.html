@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Songs written only by taylor</h1>
+<h1>Pessoa</h1>
 <table>
   <tr>
     <th>
-      <b>Song id</b>
+      <b>id</b>
     </th>
     <th>
-      <b>Song title</b>
+      <b>name</b>
     </th>
   </tr>
 
-  {% for song in songs %}
+  {% for person in persons %}
   <tr>
     <td>
-      <a href="/musica/{{ song.id }}">{{song.id }}</a>
+      <a href="/pessoa/{{ person.id }}">{{person.id }}</a>
     </td>
     <td>
-      {{ song.title }}
+      {{ person.nome }}
     </td>
   </tr>
   {% endfor %}

@@ -26,7 +26,7 @@
   {% for song in songs %}
   <tr>
     <td>
-      {{ song.id }}
+      <a href="/musica/{{ song.id }}">{{song.id }}</a>
     </td>
     <td>
       {{ song.title }}

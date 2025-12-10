@@ -4,20 +4,32 @@
 <table>
   <tr>
     <th>
+      <b>song id</b>
+    </th>
+    <th>
       <b>Title</b>
     </th>
     <th>
       <b>Producers</b>
+    </th>
+    <th>
+      <b>producer id</b>
     </th>
   </tr>
 
   {% for song in songs %}
   <tr>
     <td>
+      <a href="/musica/{{ song.id }}">{{song.id }}</a>
+    </td>
+    <td>
       {{ song.title }}
     </td>
     <td>
       {{ song.producer_name }}
+    </td>
+    <td>
+      <a href="/pessoa/{{ song.a }}">{{song.a }}</a>
     </td>
   </tr>
   {% endfor %}

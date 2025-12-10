@@ -1,16 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{ album.Title }}</h1>
-<p>
-  <b>Album id: </b>{{ album.id }}
-</p>
-<p>
-  <b>Title: </b>{{ album.titulo }}
-</p>
-<p>
-  <b>URL: </b><a href="{{ album.url }}">{{ album.url }}</a>
-</p>
-<p>
-  <b>Category: </b>{{ album.categoria }}
-</p>
+<h1>Album</h1>
+<table>
+  <tr>
+    <th>
+      <b>id</b>
+    </th>
+    <th>
+      <b>title</b>
+    </th>
+    <th>
+      <b>url</b>
+    </th>
+    <th>
+      <b>category</b>
+    </th>
+  </tr>
+
+  {% for album in albums %}
+  <tr>
+    <td>
+      <a href="/album/{{ album.id }}">{{album.id }}</a>
+    </td>
+    <td>
+      {{ album.titulo }}
+    </td>
+    <td>
+      {{ album.url }}
+    </td>
+    <td>
+      {{ album.categoria }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
 {% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Musica</h1>
+<table>
+  <tr>
+    <th>
+      <b>id</b>
+    </th>
+    <th>
+      <b>track number</b>
+    </th>
+    <th>
+      <b>titulo</b>
+      </th>
+      <th>
+      <b>url</b>
+      </th>
+      <th>
+      <b>launch date</b>
+      </th>
+      <th>
+      <b>views</b>
+      </th>
+      <th>
+      <b>lyrics</b>
+      </th>
+      <th>
+      <b>album id</b>
+      </th>
+  </tr>
+
+  {% for musica in musicas %}
+  <tr>
+    <td>
+      <a href="/musica/{{ musica.id }}">{{musica.id }}</a>
+    </td>
+    <td>
+      {{ musica.track_number }}
+    </td>
+    <td>
+      {{ musica.titulo }}
+    </td>
+    <td>
+      {{ musica.url }}
+    </td>
+    <td>
+      {{ musica.data_lancamento }}
+    </td>
+    <td>
+      {{ musica.visualizacoes }}
+    </td>
+    <td>
+      {{ musica.lyrics }}
+    </td>
+    <td>
+      <a href="/album/{{ musica.album_id }}">{{musica.album_id }}</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

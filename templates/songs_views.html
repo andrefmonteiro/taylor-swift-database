@@ -4,6 +4,9 @@
 <table>
   <tr>
     <th>
+      <b>Song id</b>
+    </th>
+    <th>
       <b>Song title</b>
     </th>
     <th>
@@ -13,6 +16,9 @@
 
   {% for song in songs %}
   <tr>
+    <td>
+      <a href="/musica/{{ song.id }}">{{song.id }}</a>
+    </td>
     <td>
       {{ song.title }}
     </td>

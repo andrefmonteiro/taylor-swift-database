@@ -4,6 +4,9 @@
 <table>
   <tr>
     <th>
+      <b>artist id</b>
+    </th>
+    <th>
       <b>Name</b>
     </th>
     <th>
@@ -13,6 +16,9 @@
 
   {% for song in songs %}
   <tr>
+    <td>
+      <a href="/pessoa/{{ song.id }}">{{song.id }}</a>
+    </td>
     <td>
       {{ song.name }}
     </td>
