@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+	<title>Taylor Swift Discography Database</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+			max-width: 900px;
+			margin: 40px auto;
+			padding: 0 20px;
+			color: #333;
+		}
+
+		h1 {
+			color: #2c3e50;
+			border-bottom: 2px solid #3498db;
+			padding-bottom: 10px;
+		}
+
+		h2 {
+			color: #34495e;
+			margin-top: 30px;
+		}
+
+		h3 {
+			color: #7f8c8d;
+		}
+
+		code {
+			background-color: #f4f4f4;
+			padding: 2px 6px;
+			border-radius: 3px;
+			font-family: 'Courier New', monospace;
+		}
+
+		pre {
+			background-color: #f4f4f4;
+			padding: 15px;
+			border-radius: 5px;
+			overflow-x: auto;
+		}
+
+		pre code {
+			background-color: transparent;
+			padding: 0;
+		}
+
+		ul {
+			margin-left: 20px;
+		}
+
+		strong {
+			color: #2c3e50;
+		}
+
+		a {
+			color: #3498db;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		hr {
+			border: none;
+			border-top: 1px solid #ddd;
+			margin: 30px 0;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Taylor Swift Discography Database</h1>
+
+	<p><strong>Projeto feito no âmbito de Bases de Dados (CC2005)</strong></p>
+
+	<p>Base de dados relacional sobre a discografia de Taylor Swift: álbuns, músicas, artistas, escritores, produtores e
+		tags.</p>
+
+	<hr>
+
+	<h2>Instalação e Execução</h2>
+
+	<h3>Pré-requisitos</h3>
+	<pre><code>python3 --version  # Python 3.9+
+pip3 install Flask pandas</code></pre>
+
+	<h3>Setup</h3>
+	<pre><code>git clone https://github.com/andrefmonteiro/taylor-swift-database.git
+cd taylor-swift-database
+python3 populate_db.py  # Opcional - BD já vem populada
+python3 server.py</code></pre>
+
+	<p><strong>Aceder:</strong> <a href="http://localhost:9000">http://localhost:9000</a></p>
+
+	<hr>
+
+	<h2>Modelação</h2>
+
+	<h3>Modelo Entidade-Relacionamento</h3>
+	<p><img src="static/diagrams/png-ER-model.png" alt="Modelo ER" /></p>
+
+	<p><strong>Entidades:</strong> Album, Musica, Pessoa, Tag<br>
+		<strong>Relacionamentos:</strong> Album 1:N Musica, Pessoa M:N Musica (Interpreta, Escreve, Produz), Musica M:N
+		Tag
+	</p>
+
+	<h3>Modelo Relacional</h3>
+	<p><img src="static/diagrams/png-relational-model.png" alt="Modelo Relacional" /></p>
+
+	<p><strong>Tabelas:</strong> Album, Musica, Pessoa, Tag, Interpreta, Escreve, Produz, MusicaTag<br>
+		<strong>3ª Forma Normal</strong> - sem dependências funcionais transitivas
+	</p>
+
+	<hr>
+
+	<h2>Funcionalidades</h2>
+
+	<h3>Endpoints por tabela</h3>
+	<ul>
+		<li><code>/{tabela}/</code> - Lista todos os registos</li>
+		<li><code>/{tabela}/&lt;id&gt;</code> - Detalhes de um registo</li>
+		<li>Exemplo: <code>/album/</code>, <code>/album/1</code></li>
+	</ul>
+
+	<h3>Interrogações SQL (10+)</h3>
+	<ul>
+		<li><code>/songs_album/</code> - Músicas por álbum</li>
+		<li><code>/only_taylor_writer_songs/</code> - Músicas só da Taylor Swift</li>
+		<li><code>/top_ten_views/</code> - Top 10 mais visualizadas</li>
+		<li><code>/songs_per_year/</code> - Músicas por ano</li>
+		<li><code>/songs/&lt;word&gt;/</code> - Busca por palavra nas letras</li>
+		<li><code>/songs_views/&lt;n&gt;/</code> - Músicas com mais de N visualizações</li>
+		<li><code>/artist_more_one/</code> - Colaboradores da Taylor Swift</li>
+		<li><em>[+ 3 queries adicionais na app]</em></li>
+	</ul>
+
+	<hr>
+
+	<h2>Autores</h2>
+	<ul>
+		<li>Joana Morais Antunes (202405702)</li>
+		<li>Ben Lubetzky (202401005)</li>
+		<li>André Ferreira Monteiro (201305319)</li>
+	</ul>
+
+</body>
+
+</html>
