@@ -1,12 +1,3 @@
-"""
-TODO
-[] create taylow_swift.db
-[] execute schema.sql
-[] read dataset-ts_discography.tsv
-[] clean data: delete duplicates
-[] insert into every table
-"""
-
 
 import sys
 from datetime import datetime
@@ -16,7 +7,7 @@ import pandas as pd
 
 # Configuração
 DB_FILE = 'taylor_swift.db'
-SCHEMA_FILE = 'schema.sql'
+SCHEMA_FILE = './sql/schema.sql'
 DATASET_FILE = '../dataset-files/dataset-ts_discography.tsv'
 
 
